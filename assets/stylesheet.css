@@ -53,17 +53,45 @@ h6 {
 }
 
 body {
-    display: grid;
-    grid-template-columns: var(--mediumSpacing) repeat(4, 1fr) var(--mediumSpacing);
     margin: 0;
-    gap: var(--smallSpacing);
+
     font-family: Calibri, sans-serif;
+}
+
+main {
+    display: grid;
+    grid-template-columns: var(--standardSpacing) repeat(4, 1fr) var(--standardSpacing);
+
 }
 
 a {
     color: var(--interactableColor);
     font-weight: 700;
 }
+
+
+/* --- TEXT --- */
+p {
+    line-height: 1.5;
+    grid-column: 2/-2;
+}
+
+.title {
+    font-family: 'Sofia', cursive;
+    font-size: var(--titleSizeMobile);
+}
+
+/* --- BUTTONS --- */
+.btn {
+    background: var(--interactableColor);
+    padding: var(--smallSpacing) var(--largeSpacing);
+    color: var(--baseTextLightColor);
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px #00000078;
+}
+
 
 /* --- NAVBAR --- */
 .navbar {
@@ -78,17 +106,19 @@ a {
 .navbar h1 {
     margin: 0;
 }
-.navbar h2{
+
+.navbar h2 {
     margin: var(--smallSpacing);
-    font-size:1rem ;
+    font-size: 1rem;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
-    border-bottom: 1px dashed var(--baseTextDarkColor);
 }
-.navbar li{
+
+.navbar li {
     list-style-type: none;
+    border-bottom: 1px dashed var(--baseTextDarkColor);
 }
 
 .navbar .logo {
@@ -110,12 +140,13 @@ a {
     cursor: pointer;
 }
 
-.navbar input[type=checkbox]{
+.navbar input[type=checkbox] {
     position: absolute;
     top: -999px;
     left: -999px;
 }
-input[type=checkbox]:checked ~ nav{
+
+input[type=checkbox]:checked~nav {
     display: grid;
 }
 
@@ -174,15 +205,4 @@ footer p {
 footer a {
     margin: .2rem;
     font-size: .9rem;
-}
-
-
-/* --- TEXT --- */
-p {
-    line-height: 1.5;
-}
-
-.title {
-    font-family: 'Sofia', cursive;
-    font-size: var(--titleSizeMobile);
 }
