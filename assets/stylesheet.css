@@ -42,8 +42,15 @@ iframe {
     box-sizing: border-box;
     text-wrap: balance;
 }
-
-
+.fullWidth{
+    grid-column: 1 /-1;
+    display: flex;
+    flex-direction: column;
+    
+}
+.primaryBackgroundBox{
+    background: var(--primaryTranparentColor);
+}
 
 
 body {
@@ -113,7 +120,6 @@ p {
     margin: var(--standardSpacing) var(--standardSpacing);
 }
 .eventIntro.btn{
-    grid-column: 2 / 6;
     margin-left: var(--xLargeSpacing);
     margin-right: var(--xLargeSpacing);
 }
