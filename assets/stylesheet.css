@@ -43,14 +43,7 @@ iframe {
     text-wrap: balance;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Poppins', sans-serif;
-}
+
 
 body {
     margin: 0;
@@ -71,6 +64,28 @@ a {
 
 
 /* --- TEXT --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 1.2rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: .9rem;
+    color: var(--primaryColor);
+}
+
 p {
     line-height: 1.5;
     grid-column: 2/-2;
