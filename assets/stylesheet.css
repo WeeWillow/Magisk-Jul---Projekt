@@ -42,13 +42,15 @@ iframe {
     box-sizing: border-box;
     text-wrap: balance;
 }
-.fullWidth{
+
+.fullWidth {
     grid-column: 1 /-1;
     display: flex;
     flex-direction: column;
-    
+
 }
-.primaryBackgroundBox{
+
+.primaryBackgroundBox {
     background: var(--primaryTranparentColor);
 }
 
@@ -84,11 +86,15 @@ h6 {
 }
 
 h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin: var(--smallSpacing);
+    text-transform: uppercase;
 }
 
 h2 {
     font-size: 1rem;
+    font-weight: 400;
+    margin: var(--smallSpacing);
 }
 
 h3 {
@@ -105,6 +111,7 @@ p {
 .title {
     font-family: 'Sofia', cursive;
     font-size: var(--titleSizeMobile);
+    text-transform: none;
 }
 
 /* --- BUTTONS --- */
@@ -117,9 +124,11 @@ p {
     border-radius: 3px;
     box-shadow: 3px 3px 5px #00000078;
     text-align: center;
-    margin: var(--standardSpacing) var(--standardSpacing);
+    margin: var(--standardSpacing) var(--standardSpacing) var(--xLargeSpacing) var(--standardSpacing);
+    text-transform: uppercase;
 }
-.eventIntro.btn{
+
+.eventIntro.btn {
     margin-left: var(--xLargeSpacing);
     margin-right: var(--xLargeSpacing);
 }
@@ -160,6 +169,13 @@ p {
 
 .navbar a {
     text-decoration: none;
+}
+
+a.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--baseTextDarkColor)
 }
 
 .navbar li {
@@ -206,6 +222,60 @@ input[type=checkbox]:checked~nav {
     padding: var(--mediumSpacing);
     z-index: 100;
 }
+
+
+/* --- HERO --- */
+
+#hero {
+    text-align: center;
+    overflow: hidden;
+    height: 50vh;
+    grid-column: 1/-1;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slide-wrapper {
+    width: 300%;
+    animation: slide 30s ease infinite;
+}
+
+.slide {
+    float: left;
+    height: 50vh;
+    width: 33.33%;
+    object-fit: cover;
+}
+.slide img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@keyframes slide {
+    20% {
+        margin-left: 0px;
+    }
+
+    30% {
+        margin-left: -100%;
+    }
+
+    60% {
+        margin-left: -100%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    90% {
+        margin-left: -200%;
+    }
+}
+
 
 /* --- FOOTER --- */
 footer {
