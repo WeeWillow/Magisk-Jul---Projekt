@@ -73,6 +73,7 @@ h5,
 h6 {
     font-family: 'Poppins', sans-serif;
     grid-column: 2 / -2;
+    text-align: center;
 }
 
 h1 {
@@ -91,6 +92,7 @@ h3 {
 p {
     line-height: 1.5;
     grid-column: 2/-2;
+    text-align: center;
 }
 
 .title {
@@ -107,6 +109,13 @@ p {
     text-decoration: none;
     border-radius: 3px;
     box-shadow: 3px 3px 5px #00000078;
+    text-align: center;
+    margin: var(--standardSpacing) var(--standardSpacing);
+}
+.eventIntro.btn{
+    grid-column: 2 / 6;
+    margin-left: var(--xLargeSpacing);
+    margin-right: var(--xLargeSpacing);
 }
 
 /* --- IMAGES --- */
