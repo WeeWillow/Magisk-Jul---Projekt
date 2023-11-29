@@ -42,7 +42,12 @@ iframe {
     box-sizing: border-box;
     text-wrap: balance;
 }
-
+img{
+    grid-column: 1 / -1;
+    height: 200px;
+    /* max-width: 100%; */
+    object-fit: cover;
+}
 
 
 body {
@@ -71,6 +76,7 @@ h4,
 h5,
 h6 {
     font-family: 'Poppins', sans-serif;
+    grid-column: 2 / -2;
 }
 
 h1 {
