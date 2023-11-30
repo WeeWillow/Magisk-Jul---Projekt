@@ -12,9 +12,9 @@ iframe {
 
     /* COLORS */
     --primaryColor: #255D28;
-    --primaryTranparentColor: rgba(36, 92, 39, 50%);
+    --primaryTransparentColor: rgba(36, 92, 39, 50%);
     --secondaryColor: #C43722;
-    --secondaryColor: rgba(195, 56, 34, 50%);
+    --secondaryTransparentColor: rgba(195, 56, 34, 50%);
     --interactableColor: #003150;
     --interactableTransparentColor: rgba(0, 50, 82, 50%);
     --textbackgroundColor: rgba(0, 0, 0, 45%);
@@ -53,8 +53,22 @@ iframe {
 
 }
 
-.primaryBackgroundBox {
-    background: var(--primaryTranparentColor);
+/* Primary background colour Box */
+.primarySolidBackgroundBox {
+    background: var(--primaryColor);
+}
+
+.primaryTransparentBackgroundBox {
+    background: var(--primaryTransparentColor);
+}
+
+/* Secondary background colour Box */
+.secondarySolidBackgroundBox {
+    background: var(--secondaryColor);
+}
+
+.secondaryTransparentBackgroundBox {
+    background: var(--secondaryTransparentColor);
 }
 
 
@@ -113,6 +127,10 @@ p {
     line-height: 1.5;
     grid-column: 2/-2;
     text-align: center;
+}
+
+.lightText {
+    color: var(--baseTextLightColor);
 }
 
 .title {
