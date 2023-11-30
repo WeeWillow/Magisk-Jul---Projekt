@@ -102,6 +102,34 @@ a {
 /* --- Bodcard --- */
 .bodCard {
     min-height: 170px;
+    display: flex;
+    padding: var(--largeSpacing) var(--mediumSpacing);
+}
+
+.bodCard img {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    filter: drop-shadow(3px 3px 3px var(--textbackgroundColor));
+}
+
+.bodCard.bodLeft{
+
+}
+
+.bodCard.bodRight{
+    flex-direction: row-reverse;
+}
+
+.bodInfo {
+    text-align: left;
+}
+
+.bodCard .btn{
+    margin: 0;
+    font-size: .9rem;
+    width: 180px;
 }
 
 /* --- TEXT --- */
