@@ -164,10 +164,11 @@ a {
     width: 130px;
     background: pink;
     grid-column: 1 / span 1;
+    grid-row: 1 / 2;
 }
 /* BENTO BILLEDE 2 */
 .bodBentoMobil img:nth-child(2){
-    height: 130px;
+    /* height: 130px; */
     width: 130px;
     background: rgb(0, 255, 157);
     grid-column: 2 / span 1;
@@ -175,18 +176,19 @@ a {
 }
 /* BENTO BILLEDE 3 */
 .bodBentoMobil img:nth-child(3){
-    height: 130px;
+    /* height: 130px; */
     width: 130px;
     background: rgb(43, 160, 255);
     grid-column: 3 / span 1;
-    grid-row: 1 / span ;
+    grid-row: 1 / span 2;
 }
 /* BENTO BILLEDE 4 */
 .bodBentoMobil img:nth-child(4){
-    height: 130px;
+    /* height: 130px; */
     width: 130px;
     background: rgb(255, 175, 55);
     grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
 }
 
 .bodBentoDesktop {
