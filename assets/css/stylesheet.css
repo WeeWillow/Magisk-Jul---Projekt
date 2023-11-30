@@ -104,6 +104,7 @@ a {
     min-height: 170px;
     display: flex;
     padding: var(--largeSpacing) var(--mediumSpacing);
+    gap: var(--mediumSpacing);
 }
 
 .bodCard img {
@@ -114,16 +115,24 @@ a {
     filter: drop-shadow(3px 3px 3px var(--textbackgroundColor));
 }
 
-.bodCard.bodLeft{
-
-}
-
-.bodCard.bodRight{
-    flex-direction: row-reverse;
-}
-
-.bodInfo {
+.bodCard.bodLeft, .bodInfo p, .bodInfo h2, .bodInfo h3{
     text-align: left;
+}
+
+.bodInfo p, .bodInfo h2, .bodInfo h3{
+    margin: 0 0 var(--standardSpacing) 0;
+}
+
+.bodInfo p {
+    line-height: var(--mediumSpacing);
+}
+
+.bodInfo h2 {
+    margin: 0;
+}
+
+.bodCard.bodRight, .bodInfo p, .bodInfo h2, .bodInfo h3{
+    flex-direction: row-reverse;
 }
 
 .bodCard .btn{
@@ -131,6 +140,7 @@ a {
     font-size: .9rem;
     width: 180px;
 }
+
 
 /* --- TEXT --- */
 h1,
