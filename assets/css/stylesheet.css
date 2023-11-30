@@ -99,14 +99,18 @@ a {
     color: var(--interactableColor);
     font-weight: 700;
 }
-/* --- Bodcard --- */
+
+
+/* ---BODER--- */
+/* BODER CARD */
 .bodCard {
-    min-height: 170px;
+/* hardcoded min width to keep "pretty" */
+    min-width: 350px;
     display: flex;
     padding: var(--largeSpacing) var(--mediumSpacing);
     gap: var(--mediumSpacing);
 }
-
+/* Bod udstillere billede */
 .bodCard img {
     border-radius: 50%;
     width: 130px;
@@ -114,37 +118,75 @@ a {
     margin: auto;
     filter: drop-shadow(3px 3px 3px var(--textbackgroundColor));
 }
-
-.bodCard.bodLeft, .bodInfo p, .bodInfo h2, .bodInfo h3{
+/* Billede af oversigt over boder */
+.bodKort {
+    margin: 0 0 var(--largeSpacing) 0;
+}
+/* Left aligned text - Bod Card */
+.bodCard, .bodInfo p, .bodInfo h2, .bodInfo h3{
     text-align: left;
 }
-
+/* justering af h2 og h3 afstand, bibeholder afstand til p*/
 .bodInfo p, .bodInfo h2, .bodInfo h3{
     margin: 0 0 var(--standardSpacing) 0;
 }
-
-.bodInfo p {
-    line-height: var(--mediumSpacing);
-}
-
+/* justering af h2 margin, overwrite default afstand*/
 .bodInfo h2 {
     margin: 0;
 }
-
+/* p linieafstand justering */
+.bodInfo p {
+    line-height: var(--mediumSpacing);
+}
+/* Flex direction, giver variation mellem udstillere */
 .bodCard.bodRight, .bodInfo p, .bodInfo h2, .bodInfo h3{
     flex-direction: row-reverse;
 }
-
+/* justering af knap, så den passer boderne og mock up bedre */
 .bodCard .btn{
     margin: 0;
     font-size: .9rem;
     width: 180px;
 }
 
+/* BENTO PYNTE BILLEDER */
+/* BENTO BOX */
 .bodBentoMobil {
-    grid-template-columns: var(--standardSpacing) repeat(3, 1fr) var(--standardSpacing);
+/* hardcoded min width to keep "pretty" */
+    min-width: 350px;
+    background: red;
     display: grid;
-    height: 100px;
+    grid-template-columns: repeat fit-content(3, 1fr);
+}
+/* BENTO BILLEDE 1 */
+.bodBentoMobil img:nth-child(1){
+    height: 130px;
+    width: 130px;
+    background: pink;
+    grid-column: 1 / span 1;
+}
+/* BENTO BILLEDE 2 */
+.bodBentoMobil img:nth-child(2){
+    height: 130px;
+    width: 130px;
+    background: rgb(0, 255, 157);
+    grid-column: 2 / span 1;
+    grid-row: 1 / 2;
+}
+/* BENTO BILLEDE 3 */
+.bodBentoMobil img:nth-child(3){
+    height: 130px;
+    width: 130px;
+    background: rgb(43, 160, 255);
+    grid-column: 3 / span 1;
+    grid-row: 1 / span ;
+}
+/* BENTO BILLEDE 4 */
+.bodBentoMobil img:nth-child(4){
+    height: 130px;
+    width: 130px;
+    background: rgb(255, 175, 55);
+    grid-column: 1 / span 2;
 }
 
 .bodBentoDesktop {
