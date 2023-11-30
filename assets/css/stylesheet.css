@@ -141,6 +141,16 @@ a {
     width: 180px;
 }
 
+.bodBentoMobil {
+    grid-template-columns: var(--standardSpacing) repeat(3, 1fr) var(--standardSpacing);
+    display: grid;
+    height: 100px;
+}
+
+.bodBentoDesktop {
+
+}
+
 
 /* --- TEXT --- */
 h1,
@@ -168,7 +178,7 @@ h2 {
 
 h3 {
     font-size: .9rem;
-    color: var(--primaryColor);
+    /* color: var(--primaryColor); --- usikker på om farven virker*/
 }
 
 p {
@@ -213,8 +223,6 @@ p {
     height: 100%;
     object-fit: cover;
     object-position: center;
-
-
 }
 
 .imgContainer {
