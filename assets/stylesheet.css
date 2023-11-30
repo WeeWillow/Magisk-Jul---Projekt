@@ -70,6 +70,10 @@ main {
 
 }
 
+section {
+    grid-column: 2/-2;
+}
+
 a {
     color: var(--interactableColor);
     font-weight: 700;
@@ -285,7 +289,6 @@ input[type=checkbox]:checked~nav {
     background: var(--textbackgroundColor);
     position: absolute;
     bottom: 350px;
-    margin: var(--largeSpacing);
     color: var(--baseTextLightColor);
     font-family: 'Poppins', sans-serif;
     width: 80%;
