@@ -919,7 +919,7 @@ header {
     .abningstidForside,
     .eventsForside,
     .legeomrader,
-    .parkering {
+    .parkering, .transport {
         background: none;
     }
 
