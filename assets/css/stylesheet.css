@@ -107,7 +107,7 @@ a {
 /* forside*/
 .introForside,
 .abningstidForside,
-.eventsForside {
+.eventsForside,.lysEvent {
     background: var(--primaryTransparentColor);
 }
 
@@ -609,6 +609,15 @@ header {
     p {
         text-align: left;
     }
+    .juleboderEvents p{
+    grid-column: 1 / -1;
+    margin: var(--mediumSpacing);
+    }
+    .lysEvent p{
+        grid-column: 2 /-1;
+        text-wrap: wrap;
+        margin: var(--mediumSpacing);
+    }
 
     .invitationForside .inviTitle {
         font-size: 2rem;
@@ -716,7 +725,7 @@ header {
     }
 
     .invitationForside,
-    .billetsalgForside {
+    .billetsalgForside, .juleboderEvents {
         background: var(--primaryTransparentColor);
     }
 
@@ -728,6 +737,17 @@ header {
         padding: 150px 0;
         row-gap: var(--smallSpacing);
     }
+    .lysEvent{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column: 1/ 7;
+    }
+    .juleboderEvents{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column: 7 / -1;
+    }
+    
 
     /* --- IMAGES --- */
 
@@ -752,6 +772,14 @@ header {
         bottom: 100px;
         grid-column: 2/-2;
     }
+    .lysEvent .imgContainer{
+        grid-column: 2/ -1;
+        margin-right: var(--smallSpacing);
+    }
+    .juleboderEvents .imgContainer{
+        grid-column: 1 /-2;
+        margin-left: var(--smallSpacing);
+    }
 
     /* --- BUTTONS --- */
     .abningstidForside .btn {
@@ -770,6 +798,15 @@ header {
 
     .invitationForside .btn2 {
         grid-column: 10/12;
+    }
+    .lysEvent .btn{
+        grid-row: 3;
+        grid-column: 2/ 7;
+        
+    }
+    .juleboderEvents .btn{
+        grid-row: 3;
+        grid-column: 1/ 6;
     }
 
 
