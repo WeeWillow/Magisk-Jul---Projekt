@@ -372,6 +372,9 @@ input[type=checkbox]:checked~nav {
     z-index: 100;
 }
 
+.nav ul {
+    padding-bottom: var(--mediumSpacing);
+}
 
 /* --- HERO --- */
 
@@ -626,6 +629,7 @@ header {
     .navbar ul {
         width: 40%;
         padding: 0;
+        padding-bottom: var(--standardSpacing);
     }
 
     /* --- HERO --- */
