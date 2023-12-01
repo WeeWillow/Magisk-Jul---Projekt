@@ -18,6 +18,7 @@ iframe {
     --interactableColor: #003150;
     --interactableTransparentColor: rgba(0, 50, 82, 50%);
     --textbackgroundColor: rgba(0, 0, 0, 25%);
+    --backgroundColor: #ffffff;
 
     --baseTextDarkColor: #141F14;
     --baseTextLightColor: #FFFFFF;
