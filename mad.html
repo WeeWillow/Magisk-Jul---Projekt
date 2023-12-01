@@ -8,13 +8,19 @@
   </head>
 
   <body>
-    <iframe src="./nav.html" title="Navbar" width="100%" height="96px"></iframe>
+    <iframe
+      src="./nav.html"
+      title="Navbar"
+      width="100%"
+      height="190px"
+    ></iframe>
     <!-- Navbar - ersat senere-->
     <main>
       <h1>Et smags eventyr i Caféen og restauranten</h1>
-      <p>
+      <h2>
         Tag familien med hen til caféen eller restauranten og få stillet jeres
-        sult med fortryllende juleretter. Til Magisk Jul serverer Kulturhuset
+        sult med fortryllende juleretter. </h2>
+        <p>Til Magisk Jul serverer Kulturhuset
         alt fra julebuffet med julelækkerier, klassiske juleplatter og fristende
         vinterretter og burgere.
       </p>
@@ -61,7 +67,6 @@
           <input type="checkbox" name="accordion-1" id="cb2" />
           <label for="cb2" class="accordionLabel">Café specialer</label>
           <div class="accordionContent">
-            <!-- Using <code>&lt;input type="checkbox"&gt;</code> allows to have several tabs open at the same time. Ved ikke hvad det her er -->
             <p class="foodName">Blokhus-tarteletten</p>
             <p>
               Stor og sprød butterdejsskal Fyld af sprøde salater, sæsonens
@@ -249,16 +254,115 @@
             <p>pr. krus 45,-</p>
           </div>
         </div>
-
+  <div class="tabbed">
+		<input type="radio" id="tab1" name="css-tabs" checked>
+		<input type="radio" id="tab2" name="css-tabs">
+		<input type="radio" id="tab3" name="css-tabs">
+		<input type="radio" id="tab4" name="css-tabs">
+		<input type="radio" id="tab5" name="css-tabs">
+		<input type="radio" id="tab6" name="css-tabs">
+		<input type="radio" id="tab7" name="css-tabs">
+		
+		<ul class="tabs">
+			<li class="tab"><label for="tab1">Juleplatter</label></li>
+			<li class="tab"><label for="tab2">Café Specialiteter</label></li>
+			<li class="tab"><label for="tab3">Salater</label></li>
+			<li class="tab"><label for="tab4">Burger</label></li>
+			<li class="tab"><label for="tab5">Børnemenu (max. 12år)</label></li>
+			<li class="tab"><label for="tab6">Desserter</label></li>
+			<li class="tab"><label for="tab7">Drikke</label></li>
+					</ul>
+		
+		<div class="tab-content">
+      <article>
+			<p class="foodName">Juleplatter nr.1</p>
+            <ul>
+              <li>Marineret sild med karrysalat og æg</li>
+              <li>Lækre håndpillede rejer med hjemmerørt mayonnaise</li>
+              <li>Julesylte med rødbeder og sennep</li>
+              <li>Lun fiskefilet med hjemmelavet remoulade og citron</li>
+              <li>Brød og smør</li>
+            </ul>
+            <p>Pris: 189,-</p>
+          </article>
+          <article>
+            <p class="foodName">Juleplatter nr.2</p>
+            <ul>
+              <li>Marineret sild med karrysalat og æg</li>
+              <li>Lækre håndpillede rejer med hjemmerørt mayonnaise</li>
+              <li>Grønlangkål med brunede kartofler</li>
+              <li>Stegt julemedister</li>
+              <li>Julesylte med rødbeder og sennep</li>
+              <li>Hjemmelavet ris a la mande med kirsebærsauce</li>
+              <li>Brød og smør</li>
+            </ul>
+            <p>Pris: 209,-</p>
+          </article>
+		</div>
+		
+		<div class="tab-content">
+			<article>
+        <p class="foodName">Blokhus-tarteletten</p>
+        <p>
+          Stor og sprød butterdejsskal Fyld af sprøde salater, sæsonens
+          friske grønt, radise-crudité, rejer, varmrøget laks, kaviar og
+          hjemmelavet tomatiseret dilddressing – toppet med friske
+          krydderurter.
+        </p>
+        <p>Pris: 225,-</p>
+        </article>
+        <article>
+        <p class="foodName">Luksus stjerneskud</p>
+        <p>
+          Stegt fiskefilet på ristet brød Med hjemmelavet tomatiseret
+          dilddressing, lækre rejer, ferskrøget laks, caviart, sprød salat,
+          frisk citron, agurk og tomat.
+        </p>
+        <p>Lille med 1 fiskefilet: 189,-</p>
+        <p>Stort med 2 fiskefileter: 225,-</p>
+      </article>
+      <article>
+        <p class="foodName">Frisk lækker rejemad</p>
+        <p>
+          Lækre rejer på bund af sprød salat på ristet brød, hjemmerørt
+          mayo, caviart, citron, agurk, tomat og frisk krydderurt.
+        </p>
+        <p>Pris: 195,-</p>
+      </article>
+		</div>
+		
+		<div class="tab-content">
+			<h4>New age bullshit</h4>
+			<p>3
+			</div>
+		
+		<div class="tab-content">
+			<h4>New age bullshit</h4>
+			4
+			</div>
+		<div class="tab-content">
+			<h4>New age bullshit</h4>
+			5
+			</div>
+		<div class="tab-content">
+			<h4>New age bullshit</h4>
+			6
+			</div>
+		<div class="tab-content">
+			<h4>New age bullshit</h4>
+			7
+			</div>
+  </div>
         <a href="#" class="center btn"> Book bord til caféen</a>
       </section>
-      <div class="imgContainer">
-        <img
-          src="./assets/img/mortens-aften-and.jpg"
-          alt="Et billede af anden til mortens aften"
-        />
-      </div>
-      <section class="mortensAften">
+      <section class="mortensAften fullWidth">
+        <div class="imgContainer">
+          <img
+            src="./assets/img/mortens-aften-and.jpg"
+            alt="Et billede af anden til mortens aften"
+          />
+        </div>
+        <article>
         <h2>Fortryllende Mortens Aften</h2>
         <p>
           Kom og bliv fortryllet af Skulpturparken og mærk julestemningen komme
@@ -275,7 +379,8 @@
         </ul>
         <p>Pr. person 235,-</p>
         <p>Børn (3-12år) 125,-</p>
-        <a href="#" class="center btn">Book bord til Mortens aften</a>
+      </article>
+      <a href="#" class="center btn">Book bord til Mortens aften</a>
       </section>
       <div class="imgContainer">
         <img
@@ -290,7 +395,7 @@
           muligheden for at komme til hyggelige madarrangementer.
         </p>
         <p><strong>Magisk Julebuffet</strong></p>
-        <div class="callout primaryTransparentBackgroundBox">
+        <div class="callOut primaryTransparentBackgroundBox">
           <p>
             Alle lørdage og søndage i november og december bliver der serveret
             smagfuld julebuffet i Orangeriet fra kl. 17:00-20:00.

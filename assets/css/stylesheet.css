@@ -18,6 +18,7 @@ iframe {
     --interactableColor: #003150;
     --interactableTransparentColor: rgba(0, 50, 82, 50%);
     --textbackgroundColor: rgba(0, 0, 0, 35%);
+    --hoverButtonColor: #1a4f70;
 
     --baseTextDarkColor: #141F14;
     --baseTextLightColor: #FFFFFF;
@@ -107,7 +108,7 @@ a {
 /* forside*/
 .introForside,
 .abningstidForside,
-.eventsForside,.lysEvent {
+.eventsForside,.lysEvent, .mortensAften {
     background: var(--primaryTransparentColor);
 }
 
@@ -257,6 +258,7 @@ p {
     line-height: 1.5;
     grid-column: 2/-2;
     text-align: center;
+    margin: var(--smallSpacing) 0;
 
 }
 
@@ -294,6 +296,9 @@ p {
 .center.btn {
     margin-left: var(--xLargeSpacing);
     margin-right: var(--xLargeSpacing);
+}
+.accordionFood .btn{
+    grid-column: 1 / -1 ;
 }
 
 /* --- IMAGES --- */
@@ -478,6 +483,7 @@ input[type=checkbox]:checked~nav {
 .accordion {
     background: var(--interactableTransparentColor);
     border-bottom: 10px solid var(--interactableColor);
+    grid-column: 1 / -1;
 }
 
 .accordionFood {
@@ -486,6 +492,7 @@ input[type=checkbox]:checked~nav {
     overflow: hidden;
     grid-column: 2/-2;
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--smallSpacing);
 }
 
@@ -518,11 +525,84 @@ input[type=checkbox]:checked~nav {
     text-align: left;
 }
 
-.accordion .foodName {
+.foodName {
     color: var(--interactableColor);
     font-weight: 700;
 }
 
+/* ---TABSECTION--- */
+.tabbed {
+    display: none;
+	overflow-x: hidden; /* so we could easily hide the radio inputs */
+	margin: 32px 0;
+	padding-bottom: 16px;
+    grid-column: 1 / -1;
+}
+
+.tabbed [type="radio"] {
+	/* hiding the inputs */
+	display: none;
+}
+
+.tabs {
+	display: flex;
+	align-items: stretch;
+	list-style: none;
+	padding: 0;
+}
+.tab > label {
+	display: block;
+	padding: 12px 15px;
+	background: var(--interactableColor);
+	color: var(--baseTextLightColor);
+	font-size: 1rem; 
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;	
+	transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+.tab:hover label {
+	border-top-color: white;
+	color: var(--baseTextLightColor);
+    background: var(--hoverButtonColor);
+}
+ul.tabs{
+    margin: 0;
+}
+
+.tab-content {
+	display: none;
+	color: var(--baseTextLightColor);
+    background: var(--interactableTransparentColor);
+    
+}
+
+/* As we cannot replace the numbers with variables or calls to element properties, the number of this selector parts is our tab count limit */
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
+.tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
+.tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label {
+	border-top-color: var(--interactableColor);
+	background:var(--interactableTransparentColor);
+	color:var(--baseTextLightColor);
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
+.tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
+.tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5),
+.tabbed [type="radio"]:nth-of-type(6):checked ~ .tab-content:nth-of-type(6),
+.tabbed [type="radio"]:nth-of-type(7):checked ~ .tab-content:nth-of-type(7){
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: var(--xLargeSpacing);
+    gap: var(--largeSpacing);
+}
 
 
 /* --- FOOTER --- */
@@ -627,7 +707,7 @@ header {
         grid-column: 7/-2;
     }
 
-    .invitationForside .callOut {
+    .invitationForside .callOut, .madArrangementer .callOut {
         background: var(--primaryTransparentColor);
         padding: var(--standardSpacing);
         border: 2px solid var(--primaryColor);
@@ -698,6 +778,7 @@ header {
     /* --- GENERALS --- */
     main {
         grid-template-columns: repeat(12, 1fr);
+        text-wrap: wrap;
 
     }
 
@@ -715,6 +796,19 @@ header {
         color: var(--baseTextLightColor);
         padding: var(--mediumSpacing) var(--largeSpacing);
         text-align: center;
+    }
+    .accordion{
+        display: none;
+    }
+    .tabbed{
+        display: block;
+    }
+    .mortensAften{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        padding: var(--largeSpacing) 0;
+        grid-column: 1 / -1;
+        gap: var(--largeSpacing);
     }
 
     /* --- GRID ITEMS --- */
@@ -746,6 +840,10 @@ header {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-column: 7 / -1;
+    }
+    .mortensAften article{
+        grid-column: 2 / 7;
+        grid-row: 1;
     }
     
 
@@ -780,6 +878,10 @@ header {
         grid-column: 1 /-2;
         margin-left: var(--smallSpacing);
     }
+    .mortensAften .imgContainer{
+        grid-column: 7 / 12;
+        grid-row: 1;
+    }
 
     /* --- BUTTONS --- */
     .abningstidForside .btn {
@@ -809,5 +911,11 @@ header {
         grid-column: 1/ 6;
     }
 
-
+    .accordionFood .btn{
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+    .mortensAften .btn{
+        grid-column: 2/ 7;
+    }
 }
