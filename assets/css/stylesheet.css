@@ -90,7 +90,7 @@ body {
 main {
     display: grid;
     grid-template-columns: var(--standardSpacing) repeat(4, 1fr) var(--standardSpacing);
-
+    grid-template-rows: auto;
 }
 
 section {
@@ -636,6 +636,8 @@ header {
 
     .bottomImg h2 {
         text-align: center;
+
+        font-weight: 700;
     }
 
     /* --- NAVBAR --- */
@@ -698,7 +700,7 @@ header {
     .abningstidForside .callOut {
         background: var(--secondaryColor);
         position: absolute;
-        right: 120px;
+        right: 200px;
         bottom: -200px;
         width: 450px;
         color: var(--baseTextLightColor);
@@ -763,11 +765,11 @@ header {
     }
 
     .invitationForside .btn1 {
-        grid-column: 7/12;
+        grid-column: 7/9;
     }
 
     .invitationForside .btn2 {
-        grid-column: 7/12;
+        grid-column: 10/12;
     }
 
 
