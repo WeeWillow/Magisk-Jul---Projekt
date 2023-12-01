@@ -17,7 +17,7 @@ iframe {
     --secondaryTransparentColor: rgba(195, 56, 34, 50%);
     --interactableColor: #003150;
     --interactableTransparentColor: rgba(0, 50, 82, 50%);
-    --textbackgroundColor: rgba(0, 0, 0, 25%);
+    --textbackgroundColor: rgba(0, 0, 0, 35%);
 
     --baseTextDarkColor: #141F14;
     --baseTextLightColor: #FFFFFF;
@@ -101,6 +101,16 @@ a {
     color: var(--interactableColor);
     font-weight: 700;
 }
+
+
+/* ---GRID ITEMS--- */
+/* forside*/
+.introForside,
+.abningstidForside,
+.eventsForside {
+    background: var(--primaryTransparentColor);
+}
+
 
 
 /* ---BODER--- */
@@ -225,18 +235,17 @@ h6 {
     font-family: 'Poppins', sans-serif;
     grid-column: 2 / -2;
     text-align: center;
+    margin: var(--smallSpacing) 0;
 }
 
 h1 {
     font-size: 1.3rem;
-    margin: var(--smallSpacing);
     text-transform: uppercase;
 }
 
 h2 {
     font-size: 1rem;
     font-weight: 400;
-    margin: var(--smallSpacing);
 }
 
 h3 {
@@ -248,6 +257,7 @@ p {
     line-height: 1.5;
     grid-column: 2/-2;
     text-align: center;
+
 }
 
 .lightText {
@@ -258,6 +268,12 @@ p {
     font-family: 'Sofia', cursive;
     font-size: var(--titleSizeMobile);
     text-transform: none;
+}
+
+.invitationForside .inviTitle {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.3rem;
 }
 
 /* --- BUTTONS --- */
@@ -560,6 +576,8 @@ header {
     width: 100%
 }
 
+
+
 @media screen and (min-width: 900px) {
 
     /* --- TEXT --- */
@@ -587,8 +605,37 @@ header {
         /* color: var(--primaryColor); --- usikker på om farven virker*/
     }
 
+
     p {
         text-align: left;
+    }
+
+    .invitationForside .inviTitle {
+        font-size: 2rem;
+    }
+
+    .invitationForside .inviText {
+        grid-column: 7/-2;
+    }
+
+    .invitationForside .callOut {
+        background: var(--primaryTransparentColor);
+        padding: var(--standardSpacing);
+        border: 2px solid var(--primaryColor);
+        color: var(--baseTextLightColor);
+        border-radius: var(--borderRadius);
+
+    }
+
+    .bottomImg .textBackground {
+        background: var(--textbackgroundColor);
+        color: var(--baseTextLightColor);
+        position: relative;
+        top: -300px;
+    }
+
+    .bottomImg h2 {
+        text-align: center;
     }
 
     /* --- NAVBAR --- */
@@ -648,6 +695,38 @@ header {
         grid-column: 2/-2;
     }
 
+    .abningstidForside .callOut {
+        background: var(--secondaryColor);
+        position: absolute;
+        right: 120px;
+        bottom: -200px;
+        width: 450px;
+        color: var(--baseTextLightColor);
+        padding: var(--mediumSpacing) var(--largeSpacing);
+        text-align: center;
+    }
+
+    /* --- GRID ITEMS --- */
+    .introForside,
+    .abningstidForside,
+    .eventsForside {
+        background: none;
+    }
+
+    .invitationForside,
+    .billetsalgForside {
+        background: var(--primaryTransparentColor);
+    }
+
+    .invitationForside {
+        grid-column: 1/-1;
+        display: grid;
+        gap: var(--xLargeSpacing);
+        grid-template-columns: repeat(12, 1fr);
+        padding: 150px 0;
+        row-gap: var(--smallSpacing);
+    }
+
     /* --- IMAGES --- */
 
     .imgContainer img {
@@ -661,4 +740,35 @@ header {
         grid-column: 2 / -2;
         height: 300px;
     }
+
+    .invitationForside .imgContainer {
+        grid-column: 2/7;
+    }
+
+    .imgContainer.bottomImg {
+        position: relative;
+        bottom: 100px;
+        grid-column: 2/-2;
+    }
+
+    /* --- BUTTONS --- */
+    .abningstidForside .btn {
+        margin: var(--smallSpacing) 0 var(--largeSpacing) 0;
+        width: 200px;
+
+    }
+
+    .invitationForside .btn {
+        margin: var(--smallSpacing);
+    }
+
+    .invitationForside .btn1 {
+        grid-column: 7/12;
+    }
+
+    .invitationForside .btn2 {
+        grid-column: 7/12;
+    }
+
+
 }
