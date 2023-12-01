@@ -17,7 +17,8 @@ iframe {
     --secondaryTransparentColor: rgba(195, 56, 34, 50%);
     --interactableColor: #003150;
     --interactableTransparentColor: rgba(0, 50, 82, 50%);
-    --textbackgroundColor: rgba(0, 0, 0, 25%);
+    --textbackgroundColor: rgba(0, 0, 0, 35%);
+    --hoverButtonColor: #1a4f70;
     --backgroundColor: #ffffff;
 
     --baseTextDarkColor: #141F14;
@@ -91,7 +92,7 @@ body {
 main {
     display: grid;
     grid-template-columns: var(--standardSpacing) repeat(4, 1fr) var(--standardSpacing);
-
+    grid-template-rows: auto;
 }
 
 section {
@@ -102,6 +103,18 @@ a {
     color: var(--interactableColor);
     font-weight: 700;
 }
+
+
+/* ---GRID ITEMS--- */
+/* forside*/
+.introForside,
+.abningstidForside,
+.eventsForside,
+.lysEvent,
+.mortensAften {
+    background: var(--primaryTransparentColor);
+}
+
 
 
 /* ---BODER--- */
@@ -229,18 +242,17 @@ h6 {
     font-family: 'Poppins', sans-serif;
     grid-column: 2 / -2;
     text-align: center;
+    margin: var(--smallSpacing) 0;
 }
 
 h1 {
     font-size: 1.3rem;
-    margin: var(--smallSpacing);
     text-transform: uppercase;
 }
 
 h2 {
     font-size: 1rem;
     font-weight: 400;
-    margin: var(--smallSpacing);
 }
 
 h3 {
@@ -252,6 +264,8 @@ p {
     line-height: 1.5;
     grid-column: 2/-2;
     text-align: center;
+    margin: var(--smallSpacing) 0;
+
 }
 
 .lightText {
@@ -262,6 +276,12 @@ p {
     font-family: 'Sofia', cursive;
     font-size: var(--titleSizeMobile);
     text-transform: none;
+}
+
+.invitationForside .inviTitle {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.3rem;
 }
 
 /* --- BUTTONS --- */
@@ -282,6 +302,10 @@ p {
 .center.btn {
     margin-left: var(--xLargeSpacing);
     margin-right: var(--xLargeSpacing);
+}
+
+.accordionFood .btn {
+    grid-column: 1 / -1;
 }
 
 /* --- IMAGES --- */
@@ -469,6 +493,7 @@ input[type=checkbox]:checked~nav {
 .accordion {
     background: var(--interactableTransparentColor);
     border-bottom: 10px solid var(--interactableColor);
+    grid-column: 1 / -1;
 }
 
 .accordionFood {
@@ -477,6 +502,7 @@ input[type=checkbox]:checked~nav {
     overflow: hidden;
     grid-column: 2/-2;
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--smallSpacing);
 }
 
@@ -509,11 +535,88 @@ input[type=checkbox]:checked~nav {
     text-align: left;
 }
 
-.accordion .foodName {
+.foodName {
     color: var(--interactableColor);
     font-weight: 700;
 }
 
+/* ---TABSECTION--- */
+.tabbed {
+    display: none;
+    overflow-x: hidden;
+    /* so we could easily hide the radio inputs */
+    margin: 32px 0;
+    padding-bottom: 16px;
+    grid-column: 1 / -1;
+}
+
+.tabbed [type="radio"] {
+    /* hiding the inputs */
+    display: none;
+}
+
+.tabs {
+    display: flex;
+    align-items: stretch;
+    list-style: none;
+    padding: 0;
+}
+
+.tab>label {
+    display: block;
+    padding: 12px 15px;
+    background: var(--interactableColor);
+    color: var(--baseTextLightColor);
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tab:hover label {
+    border-top-color: white;
+    color: var(--baseTextLightColor);
+    background: var(--hoverButtonColor);
+}
+
+ul.tabs {
+    margin: 0;
+}
+
+.tab-content {
+    display: none;
+    color: var(--baseTextLightColor);
+    background: var(--interactableTransparentColor);
+
+}
+
+/* As we cannot replace the numbers with variables or calls to element properties, the number of this selector parts is our tab count limit */
+.tabbed [type="radio"]:nth-of-type(1):checked~.tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked~.tabs .tab:nth-of-type(2) label,
+.tabbed [type="radio"]:nth-of-type(3):checked~.tabs .tab:nth-of-type(3) label,
+.tabbed [type="radio"]:nth-of-type(4):checked~.tabs .tab:nth-of-type(4) label,
+.tabbed [type="radio"]:nth-of-type(5):checked~.tabs .tab:nth-of-type(5) label {
+    border-top-color: var(--interactableColor);
+    background: var(--interactableTransparentColor);
+    color: var(--baseTextLightColor);
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked~.tab-content:nth-of-type(1),
+.tabbed [type="radio"]:nth-of-type(2):checked~.tab-content:nth-of-type(2),
+.tabbed [type="radio"]:nth-of-type(3):checked~.tab-content:nth-of-type(3),
+.tabbed [type="radio"]:nth-of-type(4):checked~.tab-content:nth-of-type(4),
+.tabbed [type="radio"]:nth-of-type(5):checked~.tab-content:nth-of-type(5),
+.tabbed [type="radio"]:nth-of-type(6):checked~.tab-content:nth-of-type(6),
+.tabbed [type="radio"]:nth-of-type(7):checked~.tab-content:nth-of-type(7) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: var(--xLargeSpacing);
+    gap: var(--largeSpacing);
+}
 
 
 /* --- FOOTER --- */
@@ -567,6 +670,8 @@ header {
     width: 100%
 }
 
+
+
 @media screen and (min-width: 900px) {
 
     /* --- TEXT --- */
@@ -594,8 +699,51 @@ header {
         /* color: var(--primaryColor); --- usikker på om farven virker*/
     }
 
+
     p {
         text-align: left;
+    }
+
+    .juleboderEvents p {
+        grid-column: 1 / -1;
+        margin: var(--mediumSpacing);
+    }
+
+    .lysEvent p {
+        grid-column: 2 /-1;
+        text-wrap: wrap;
+        margin: var(--mediumSpacing);
+    }
+
+    .invitationForside .inviTitle {
+        font-size: 2rem;
+    }
+
+    .invitationForside .inviText {
+        grid-column: 7/-2;
+    }
+
+    .invitationForside .callOut,
+    .madArrangementer .callOut {
+        background: var(--primaryTransparentColor);
+        padding: var(--standardSpacing);
+        border: 2px solid var(--primaryColor);
+        color: var(--baseTextLightColor);
+        border-radius: var(--borderRadius);
+
+    }
+
+    .bottomImg .textBackground {
+        background: var(--textbackgroundColor);
+        color: var(--baseTextLightColor);
+        position: relative;
+        top: -300px;
+    }
+
+    .bottomImg h2 {
+        text-align: center;
+
+        font-weight: 700;
     }
 
     /* --- NAVBAR --- */
@@ -648,6 +796,7 @@ header {
     /* --- GENERALS --- */
     main {
         grid-template-columns: repeat(12, 1fr);
+        text-wrap: wrap;
 
     }
 
@@ -655,6 +804,73 @@ header {
     .fullWidth {
         grid-column: 2/-2;
     }
+
+    .abningstidForside .callOut {
+        background: var(--secondaryColor);
+        position: absolute;
+        right: 200px;
+        bottom: -200px;
+        width: 450px;
+        color: var(--baseTextLightColor);
+        padding: var(--mediumSpacing) var(--largeSpacing);
+        text-align: center;
+    }
+
+    .accordion {
+        display: none;
+    }
+
+    .tabbed {
+        display: block;
+    }
+
+    .mortensAften {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        padding: var(--largeSpacing) 0;
+        grid-column: 1 / -1;
+        gap: var(--largeSpacing);
+    }
+
+    /* --- GRID ITEMS --- */
+    .introForside,
+    .abningstidForside,
+    .eventsForside {
+        background: none;
+    }
+
+    .invitationForside,
+    .billetsalgForside,
+    .juleboderEvents {
+        background: var(--primaryTransparentColor);
+    }
+
+    .invitationForside {
+        grid-column: 1/-1;
+        display: grid;
+        gap: var(--xLargeSpacing);
+        grid-template-columns: repeat(12, 1fr);
+        padding: 150px 0;
+        row-gap: var(--smallSpacing);
+    }
+
+    .lysEvent {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column: 1/ 7;
+    }
+
+    .juleboderEvents {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column: 7 / -1;
+    }
+
+    .mortensAften article {
+        grid-column: 2 / 7;
+        grid-row: 1;
+    }
+
 
     /* --- IMAGES --- */
 
@@ -668,5 +884,69 @@ header {
     .imgContainer {
         grid-column: 2 / -2;
         height: 300px;
+    }
+
+    .invitationForside .imgContainer {
+        grid-column: 2/7;
+    }
+
+    .imgContainer.bottomImg {
+        position: relative;
+        bottom: 100px;
+        grid-column: 2/-2;
+    }
+
+    .lysEvent .imgContainer {
+        grid-column: 2/ -1;
+        margin-right: var(--smallSpacing);
+    }
+
+    .juleboderEvents .imgContainer {
+        grid-column: 1 /-2;
+        margin-left: var(--smallSpacing);
+    }
+
+    .mortensAften .imgContainer {
+        grid-column: 7 / 12;
+        grid-row: 1;
+    }
+
+    /* --- BUTTONS --- */
+    .abningstidForside .btn {
+        margin: var(--smallSpacing) 0 var(--largeSpacing) 0;
+        width: 200px;
+
+    }
+
+    .invitationForside .btn {
+        margin: var(--smallSpacing);
+    }
+
+    .invitationForside .btn1 {
+        grid-column: 7/9;
+    }
+
+    .invitationForside .btn2 {
+        grid-column: 10/12;
+    }
+
+    .lysEvent .btn {
+        grid-row: 3;
+        grid-column: 2/ 7;
+
+    }
+
+    .juleboderEvents .btn {
+        grid-row: 3;
+        grid-column: 1/ 6;
+    }
+
+    .accordionFood .btn {
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    .mortensAften .btn {
+        grid-column: 2/ 7;
     }
 }
