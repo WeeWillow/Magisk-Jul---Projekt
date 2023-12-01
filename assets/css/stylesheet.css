@@ -111,7 +111,9 @@ a {
 .abningstidForside,
 .eventsForside,
 .lysEvent,
-.mortensAften {
+.mortensAften,
+.legeomrader,
+.parkering, .transport {
     background: var(--primaryTransparentColor);
 }
 
@@ -907,10 +909,17 @@ header {
         gap: var(--largeSpacing);
     }
 
+    .kort ul{
+        display: flex;
+        gap:var(--xLargeSpacing)
+    }
+
     /* --- GRID ITEMS --- */
     .introForside,
     .abningstidForside,
-    .eventsForside {
+    .eventsForside,
+    .legeomrader,
+    .parkering {
         background: none;
     }
 
@@ -938,6 +947,21 @@ header {
     .billetsalgForside>* {
         grid-column: 2/-2;
     }
+
+    .toiletter,
+    .legeomrader,
+    .dyrIparken,
+    .parkering,
+    .tilgaengelighed {
+        grid-column: 2/7;
+    }
+
+    .transport {
+        grid-column: 7/12;
+        grid-row: 6/7;
+    }
+
+
 
     .lysEvent {
         display: grid;
@@ -1006,6 +1030,16 @@ header {
         max-width: 100%;
     }
 
+    .dyrIparken+.imgContainer {
+        grid-column: 7/12;
+        grid-row: 3/6;
+        padding: var(--standardSpacing) 0;
+
+    }
+.kort .imgContainer{
+    height: 50vh;
+}
+
     /* --- BUTTONS --- */
     .abningstidForside .btn {
         margin: var(--smallSpacing) 0 var(--largeSpacing) 0;
@@ -1050,14 +1084,15 @@ header {
     }
 
     /* --- EVENTS FORSIDE --- */
-   
+
     .eventsForside .slide-wrapper {
         width: 100%;
         animation: none;
         display: flex;
         justify-content: center;
     }
-    .eventsForside .slide{
+
+    .eventsForside .slide {
         width: 31%;
         margin: var(--smallSpacing);
     }
