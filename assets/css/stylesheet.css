@@ -115,7 +115,15 @@ a {
     background: var(--primaryTransparentColor);
 }
 
+.eventsForside {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
+.eventsForside .slide {
+    height: auto;
+}
 
 /* ---BODER--- */
 /* BODER CARD */
@@ -284,6 +292,32 @@ p {
     font-size: 1.3rem;
 }
 
+.longText {
+    text-align: left;
+}
+
+.invitationForside .callOut {
+    background: var(--primaryTransparentColor);
+    padding: var(--smallSpacing);
+    border: 2px solid var(--primaryColor);
+    color: var(--baseTextLightColor);
+    border-radius: var(--borderRadius);
+
+}
+
+.textBackground {
+    background: var(--textbackgroundColor);
+    color: var(--baseTextLightColor);
+    position: relative;
+    top: -100px;
+}
+
+.bottomImg h2 {
+    text-align: center;
+
+    font-weight: 700;
+}
+
 /* --- BUTTONS --- */
 .btn {
     background: var(--interactableColor);
@@ -299,9 +333,17 @@ p {
     display: block;
 }
 
+.btn:hover {
+    background: var(--hoverButtonColor);
+}
+
 .center.btn {
     margin-left: var(--xLargeSpacing);
     margin-right: var(--xLargeSpacing);
+}
+
+.invitationForside .btn {
+    display: none;
 }
 
 .accordionFood .btn {
@@ -321,6 +363,23 @@ p {
     height: 200px;
 }
 
+.imgContainer.brevDesktop {
+    display: none;
+}
+
+.imgContainer.brevMobil {
+    height: 100%;
+}
+
+.eventsForside .imgContainer {
+    display: block;
+    height: 300px;
+}
+
+.billetsalgForside img {
+    display: none;
+}
+
 /* --- NAVBAR --- */
 .navbar {
     grid-column: 1/-1;
@@ -329,6 +388,7 @@ p {
     position: sticky;
     top: 0;
     background: var(--backgroundColor);
+    z-index: 100;
 }
 
 .navbar h1 {
@@ -457,12 +517,13 @@ input[type=checkbox]:checked~nav {
 
 .sloganContainer {
     background: var(--textbackgroundColor);
-    position: absolute;
-    bottom: 350px;
+    position: relative;
+    bottom: 150px;
     color: var(--baseTextLightColor);
     font-family: 'Poppins', sans-serif;
     width: 80%;
     font-weight: 700;
+    padding: var(--standardSpacing);
 }
 
 
@@ -725,26 +786,23 @@ header {
 
     .invitationForside .callOut,
     .madArrangementer .callOut {
-        background: var(--primaryTransparentColor);
+        /* background: var(--primaryTransparentColor);
         padding: var(--standardSpacing);
         border: 2px solid var(--primaryColor);
         color: var(--baseTextLightColor);
-        border-radius: var(--borderRadius);
+        border-radius: var(--borderRadius); */
 
     }
 
-    .bottomImg .textBackground {
-        background: var(--textbackgroundColor);
-        color: var(--baseTextLightColor);
-        position: relative;
-        top: -300px;
+    .billetsalgForside article {
+        display: none;
     }
 
-    .bottomImg h2 {
-        text-align: center;
-
-        font-weight: 700;
+    .billetsalgForside p {
+        grid-column: 8/12;
+        align-self: center;
     }
+
 
     /* --- NAVBAR --- */
     .navbar h1 {
@@ -780,13 +838,30 @@ header {
         padding-bottom: var(--standardSpacing);
     }
 
+    /* --- FOOTER --- */
+    footer nav {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    footer>div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 50%;
+    }
+
+    footer .contactInfo {
+        grid-row: 2;
+        width: 100%;
+    }
+
     /* --- HERO --- */
     .sloganContainer {
         font-size: 1.6rem;
         left: var(--xLargeSpacing);
-        bottom: 550px;
+        bottom: 400px;
         width: 400px;
         padding: var(--mediumSpacing);
+        z-index: 0;
     }
 
     .sloganContainer p {
@@ -854,6 +929,16 @@ header {
         row-gap: var(--smallSpacing);
     }
 
+    .billetsalgForside {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .billetsalgForside>* {
+        grid-column: 2/-2;
+    }
+
     .lysEvent {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -886,13 +971,18 @@ header {
         height: 300px;
     }
 
-    .invitationForside .imgContainer {
+    .imgContainer.brevMobil {
+        display: none;
+    }
+
+    .imgContainer.imgContainer.brevDesktop {
+        display: grid;
         grid-column: 2/7;
     }
 
     .imgContainer.bottomImg {
         position: relative;
-        bottom: 100px;
+        bottom: 50px;
         grid-column: 2/-2;
     }
 
@@ -909,6 +999,11 @@ header {
     .mortensAften .imgContainer {
         grid-column: 7 / 12;
         grid-row: 1;
+    }
+
+    .billetsalgForside img {
+        display: inline;
+        max-width: 100%;
     }
 
     /* --- BUTTONS --- */
@@ -930,6 +1025,10 @@ header {
         grid-column: 10/12;
     }
 
+    .billetsalgForside .btn {
+        grid-column: 2/8;
+    }
+
     .lysEvent .btn {
         grid-row: 3;
         grid-column: 2/ 7;
@@ -949,4 +1048,18 @@ header {
     .mortensAften .btn {
         grid-column: 2/ 7;
     }
+
+    /* --- EVENTS FORSIDE --- */
+   
+    .eventsForside .slide-wrapper {
+        width: 100%;
+        animation: none;
+        display: flex;
+        justify-content: center;
+    }
+    .eventsForside .slide{
+        width: 31%;
+        margin: var(--smallSpacing);
+    }
+
 }
