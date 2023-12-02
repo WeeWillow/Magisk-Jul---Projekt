@@ -104,6 +104,13 @@ a {
     font-weight: 700;
 }
 
+.abningstiderContainer {
+    display: grid;
+    grid-template-columns: .7fr 1fr;
+    gap: var(--standardSpacing);
+    padding: var(--smallSpacing);
+    align-items: center;
+}
 
 /* ---GRID ITEMS--- */
 /* forside*/
@@ -368,6 +375,7 @@ p {
     grid-column: 1 / -1;
 }
 
+
 /* --- IMAGES --- */
 .imgContainer img {
     width: 100%;
@@ -396,6 +404,10 @@ p {
 
 .billetsalgForside img {
     display: none;
+}
+
+.abningstider img {
+    max-width: 100%;
 }
 
 /* --- NAVBAR --- */
@@ -943,6 +955,20 @@ header {
         gap: var(--xLargeSpacing)
     }
 
+    .gruppePriser {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--mediumSpacing);
+        padding: var(--largeSpacing);
+    }
+    .bookMadAbning{
+        display: none;
+    }
+    .endImgAbning{
+        display: block;
+    }
+
     /* --- GRID ITEMS --- */
     .introForside,
     .abningstidForside,
@@ -1037,6 +1063,41 @@ header {
         grid-row: 1;
     }
 
+    .abningstider {
+        grid-column: 2/5;
+        padding: var(--largeSpacing);
+        position: relative;
+        top: -40px;
+        left: 50px;
+    }
+
+    .abningstiderContainer {
+        grid-template-columns: 1fr .5fr;
+    }
+
+    .generalEntre {
+        grid-column: 7/12;
+        align-self: center;
+    }
+
+    .gruppePriser {
+        grid-row: 5/6;
+    }
+
+    .grupper {
+        grid-column: 2/5;
+
+    }
+
+    .storGrupper {
+        grid-column: 5/8;
+    }
+
+    .arskort {
+        grid-column: 8/12;
+        grid-row: 5/6;
+    }
+
     /* --- IMAGES --- */
 
     .imgContainer img {
@@ -1102,6 +1163,12 @@ header {
 
     .kort .imgContainer {
         height: 50vh;
+    }
+
+    .abningstider img {
+
+        max-width: 300%;
+
     }
 
     /* --- BUTTONS --- */
@@ -1180,18 +1247,21 @@ header {
         max-height: 100%;
         min-width: auto;
     }
-.bodKort{
-    height: 500px;
-}
+
+    .bodKort {
+        height: 500px;
+    }
+
     .bodCard.bodRight,
     .bodInfo p,
     .bodInfo h2,
     .bodInfo h3 {
         flex-direction: initial;
     }
-    .bodBentoMobil{
+
+    .bodBentoMobil {
         margin: var(--smallSpacing) 0;
-        
+
     }
 
     .bentoBodContainer {
@@ -1200,7 +1270,7 @@ header {
         gap: var(--smallSpacing);
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
-        
+
     }
 
     .bentoBodContainer article:nth-child(1) {
@@ -1211,7 +1281,7 @@ header {
 
     .bentoBodContainer article:nth-child(2) {
         grid-row: 1/2;
-        grid-column: 2/4;    
+        grid-column: 2/4;
     }
 
     .bentoBodContainer article:nth-child(3) {
