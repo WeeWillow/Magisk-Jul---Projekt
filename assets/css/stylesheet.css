@@ -109,11 +109,9 @@ a {
 /* forside*/
 .introForside,
 .abningstidForside,
-.eventsForside,
-.lysEvent,
-.mortensAften,
 .legeomrader,
 .parkering, .transport {
+.eventsForside,.lysEvent, .mortensAften, .praktiskInfoMad {
     background: var(--primaryTransparentColor);
 }
 
@@ -804,6 +802,18 @@ header {
         grid-column: 8/12;
         align-self: center;
     }
+    .madArrangementer h2{
+        grid-column: 1/ -1;
+    }
+    .madArrangementer p{
+        grid-column: 1 / -1;
+    }
+    .madArrangementer ul{
+        grid-column: 1 / -1;
+    }
+    .madArrangementer .callOut{
+        grid-column: 1/ -1;
+    }
 
 
     /* --- NAVBAR --- */
@@ -901,14 +911,6 @@ header {
         display: block;
     }
 
-    .mortensAften {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        padding: var(--largeSpacing) 0;
-        grid-column: 1 / -1;
-        gap: var(--largeSpacing);
-    }
-
     .kort ul{
         display: flex;
         gap:var(--xLargeSpacing)
@@ -979,7 +981,28 @@ header {
         grid-column: 2 / 7;
         grid-row: 1;
     }
-
+    .madArrangementer{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .mortensAften{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        padding: var(--largeSpacing) 0;
+        grid-column: 1 / -1;
+        gap: var(--largeSpacing);
+    }
+    .praktiskInfoMad{
+        display: grid;
+        grid-template-columns:repeat(12, 1fr);
+        grid-column: 1 / -1;
+        gap: var(--largeSpacing);
+        padding: var(--largeSpacing) 0;
+    }
+    .praktiskInfoMad article{
+        grid-column: 2 / 7;
+        grid-row: 1;
+    }
 
     /* --- IMAGES --- */
 
@@ -1021,6 +1044,10 @@ header {
     }
 
     .mortensAften .imgContainer {
+        grid-column: 7 / 12;
+        grid-row: 1;
+    }
+    .praktiskInfoMad .imgContainer{
         grid-column: 7 / 12;
         grid-row: 1;
     }
@@ -1082,6 +1109,15 @@ header {
     .mortensAften .btn {
         grid-column: 2/ 7;
     }
+    .madArrangementer .btn{
+        grid-column: 1/ 4;
+    }
+    .praktiskInfoMad .btn{
+        grid-column: 2 / 7;
+    }
+    .praktiskInfoMad .kontrolrapporten{
+        grid-column: 7 / 12;
+    }
 
     /* --- EVENTS FORSIDE --- */
 
@@ -1091,8 +1127,8 @@ header {
         display: flex;
         justify-content: center;
     }
-
     .eventsForside .slide {
+
         width: 31%;
         margin: var(--smallSpacing);
     }
