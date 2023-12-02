@@ -110,8 +110,12 @@ a {
 .introForside,
 .abningstidForside,
 .legeomrader,
-.parkering, .transport {
-.eventsForside,.lysEvent, .mortensAften, .praktiskInfoMad {
+.parkering,
+.transport,
+.eventsForside,
+.lysEvent,
+.mortensAften,
+.praktiskInfoMad {
     background: var(--primaryTransparentColor);
 }
 
@@ -802,16 +806,20 @@ header {
         grid-column: 8/12;
         align-self: center;
     }
-    .madArrangementer h2{
+
+    .madArrangementer h2 {
         grid-column: 1/ -1;
     }
-    .madArrangementer p{
+
+    .madArrangementer p {
         grid-column: 1 / -1;
     }
-    .madArrangementer ul{
+
+    .madArrangementer ul {
         grid-column: 1 / -1;
     }
-    .madArrangementer .callOut{
+
+    .madArrangementer .callOut {
         grid-column: 1/ -1;
     }
 
@@ -911,9 +919,9 @@ header {
         display: block;
     }
 
-    .kort ul{
+    .kort ul {
         display: flex;
-        gap:var(--xLargeSpacing)
+        gap: var(--xLargeSpacing)
     }
 
     /* --- GRID ITEMS --- */
@@ -921,7 +929,8 @@ header {
     .abningstidForside,
     .eventsForside,
     .legeomrader,
-    .parkering, .transport {
+    .parkering,
+    .transport {
         background: none;
     }
 
@@ -981,25 +990,29 @@ header {
         grid-column: 2 / 7;
         grid-row: 1;
     }
-    .madArrangementer{
+
+    .madArrangementer {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
     }
-    .mortensAften{
+
+    .mortensAften {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         padding: var(--largeSpacing) 0;
         grid-column: 1 / -1;
         gap: var(--largeSpacing);
     }
-    .praktiskInfoMad{
+
+    .praktiskInfoMad {
         display: grid;
-        grid-template-columns:repeat(12, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         grid-column: 1 / -1;
         gap: var(--largeSpacing);
         padding: var(--largeSpacing) 0;
     }
-    .praktiskInfoMad article{
+
+    .praktiskInfoMad article {
         grid-column: 2 / 7;
         grid-row: 1;
     }
@@ -1047,7 +1060,8 @@ header {
         grid-column: 7 / 12;
         grid-row: 1;
     }
-    .praktiskInfoMad .imgContainer{
+
+    .praktiskInfoMad .imgContainer {
         grid-column: 7 / 12;
         grid-row: 1;
     }
@@ -1063,9 +1077,10 @@ header {
         padding: var(--standardSpacing) 0;
 
     }
-.kort .imgContainer{
-    height: 50vh;
-}
+
+    .kort .imgContainer {
+        height: 50vh;
+    }
 
     /* --- BUTTONS --- */
     .abningstidForside .btn {
@@ -1109,13 +1124,16 @@ header {
     .mortensAften .btn {
         grid-column: 2/ 7;
     }
-    .madArrangementer .btn{
+
+    .madArrangementer .btn {
         grid-column: 1/ 4;
     }
-    .praktiskInfoMad .btn{
+
+    .praktiskInfoMad .btn {
         grid-column: 2 / 7;
     }
-    .praktiskInfoMad .kontrolrapporten{
+
+    .praktiskInfoMad .kontrolrapporten {
         grid-column: 7 / 12;
     }
 
@@ -1127,6 +1145,7 @@ header {
         display: flex;
         justify-content: center;
     }
+
     .eventsForside .slide {
 
         width: 31%;
